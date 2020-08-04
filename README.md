@@ -30,7 +30,7 @@
 | shipping_origin_id     | integer | null: false |
 | days_until_shipping_id | integer | null: false |
 | price      | integer | null: false |
-| users_id   | references | null: false, foreign_key: true |
+| user  | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -52,7 +52,7 @@
 | street_number | string | null: false |
 | room_number   | string |  
 | phone_number  | string | null: false |
-| items_id   | references | null: false, foreign_key: true |
+| item  | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :items
@@ -62,8 +62,8 @@
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| users_id | references | null: false, foreign_key: true |
-| items_id | references | null: false, foreign_key: true |
+| user | references | null: false, foreign_key: true |
+| item | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
