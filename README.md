@@ -14,7 +14,7 @@
 | birthday | date | null: false |
 
 ### Association
-- has_one :purchaser
+- has_many :transactions
 - has_many :items
 
 ## items テーブル
@@ -31,12 +31,11 @@
 | days_until_shipping_id | integer | null: false |
 | price      | integer | null: false |
 | users_id   | references | null: false, foreign_key: true |
-| purchasers_id   | references | null: false, foreign_key: true |
-
 
 ### Association
 - belongs_to :user
-- belongs_to :purchaser
+- has_one :transaction
+- has_one :shipping_address
 - belongs_to_active_hash :category
 - belongs_to_active_hash :status
 - belongs_to_active_hash :shipping_charges
@@ -51,22 +50,22 @@
 | prefecture_id | integer | null: false |
 | city     | string  | null: false |
 | street_number | string | null: false |
-| room_number   | integer |  
+| room_number   | string |  
 | phone_number  | string | null: false |
-| users_id | references | null: false, foreign_key: true |
-| purchasers_id   | references | null: false, foreign_key: true |
+| items_id   | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :purchaser
+- belongs_to :items
 - belongs_to_active_hash :prefecture
 
-## purchasers テーブル
+## transactions テーブル
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
 | users_id | references | null: false, foreign_key: true |
+| items_id | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
-- has_many :items
-- has_many :shipping_address
+- belongs_to :item
+
