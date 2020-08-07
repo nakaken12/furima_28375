@@ -38,7 +38,7 @@
 - has_one :shipping_address
 - belongs_to_active_hash :category
 - belongs_to_active_hash :status
-- belongs_to_active_hash :shipping_charges
+- belongs_to_active_hash :shipping_charge
 - belongs_to_active_hash :shipping_origin
 - belongs_to_active_hash :days_until_shipping
 
