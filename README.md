@@ -26,7 +26,7 @@
 | explanation  | text   | null: false |
 | category_id  | integer | null: false |
 | status_id    | integer | null: false |
-| shipping_charges_id    | integer | null: false |
+| shipping_charge_id    | integer | null: false |
 | shipping_origin_id     | integer | null: false |
 | days_until_shipping_id | integer | null: false |
 | price      | integer | null: false |
