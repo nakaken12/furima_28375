@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :days_until_shipping
   has_one_attached :image
   validate :image_presence
-
+  
   def image_presence
     if image.attached?
       if !image.content_type.in?(%('image/jpeg image/png'))
