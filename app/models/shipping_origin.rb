@@ -32,7 +32,7 @@ class ShippingOrigin < ActiveHash::Base
     { id: 30, name: '奈良県' },
     { id: 31, name: '和歌山県' },
     { id: 32, name: '鳥取県' },
-    { id: 33, name: '島根県' }, 
+    { id: 33, name: '島根県' },
     { id: 34, name: '岡山県' },
     { id: 35, name: '広島県' },
     { id: 36, name: '山口県' },
@@ -46,7 +46,7 @@ class ShippingOrigin < ActiveHash::Base
     { id: 44, name: '熊本県' },
     { id: 45, name: '大分県' },
     { id: 46, name: '宮崎県' },
-    { id: 47, name: '鹿児島県'},
+    { id: 47, name: '鹿児島県' },
     { id: 48, name: '沖縄県' }
   ]
 end

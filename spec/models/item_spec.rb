@@ -6,21 +6,17 @@ describe Item do
   end
 
   describe '商品出品' do
-    
     context '商品出品が上手く行く時' do
-
       it 'image、name、explanation、category_id、status_id、shipping_charge_id、shipping_origin_id、days_until_shipping_id、priceが存在すれば出品できる' do
         expect(@item).to be_valid
       end
-
     end
 
     context '商品出品が上手く行かない時' do
-
       it 'imageが空では出品できない' do
         @item.image = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Image ファイルを添付してください")
+        expect(@item.errors.full_messages).to include('Image ファイルを添付してください')
       end
 
       it 'nameが空では出品できない' do
@@ -74,10 +70,8 @@ describe Item do
       it '価格の範囲が¥300~¥9,999,999でないと出品できない' do
         @item.price = '150'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price Price Out of setting rangre")
+        expect(@item.errors.full_messages).to include('Price Price Out of setting rangre')
       end
-
     end
-
   end
 end

@@ -8,12 +8,10 @@ class Item < ApplicationRecord
   belongs_to_active_hash :days_until_shipping
   has_one_attached :image
   validate :image_presence
-  
+
   def image_presence
     if image.attached?
-      if !image.content_type.in?(%('image/jpeg image/png'))
-        errors.add(:image, 'にはjpegまたはpngファイルを添付してください')
-      end
+      errors.add(:image, 'にはjpegまたはpngファイルを添付してください') unless image.content_type.in?(%('image/jpeg image/png'))
     else
       errors.add(:image, 'ファイルを添付してください')
     end
@@ -24,7 +22,6 @@ class Item < ApplicationRecord
     validates :price
   end
 
-  #「--」の時は保存できないようにする
-  validates :category_id, :status_id, :shipping_charge_id, :shipping_origin_id, :days_until_shipping_id,  numericality: { other_than: 1 } 
-  
+  # 「--」の時は保存できないようにする
+  validates :category_id, :status_id, :shipping_charge_id, :shipping_origin_id, :days_until_shipping_id, numericality: { other_than: 1 }
 end
