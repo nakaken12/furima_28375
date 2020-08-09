@@ -14,7 +14,7 @@
 | birthday | date | null: false |
 
 ### Association
-- has_many :item_purchases
+- has_many :trade
 - has_many :items
 
 ## items テーブル
@@ -33,7 +33,7 @@
 
 ### Association
 - belongs_to :user
-- has_one :item_purchases
+- has_one :trade
 - has_one :shipping_address
 - belongs_to_active_hash :category
 - belongs_to_active_hash :status
@@ -57,7 +57,7 @@
 - belongs_to :items
 - belongs_to_active_hash :prefecture
 
-## item_purchases テーブル
+## trade テーブル
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
