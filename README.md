@@ -21,12 +21,11 @@
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| image    | string | null: false |
 | name     | string | null: false |
 | explanation  | text   | null: false |
 | category_id  | integer | null: false |
 | status_id    | integer | null: false |
-| shipping_charges_id    | integer | null: false |
+| shipping_charge_id    | integer | null: false |
 | shipping_origin_id     | integer | null: false |
 | days_until_shipping_id | integer | null: false |
 | price      | integer | null: false |
@@ -38,7 +37,7 @@
 - has_one :shipping_address
 - belongs_to_active_hash :category
 - belongs_to_active_hash :status
-- belongs_to_active_hash :shipping_charges
+- belongs_to_active_hash :shipping_charge
 - belongs_to_active_hash :shipping_origin
 - belongs_to_active_hash :days_until_shipping
 
