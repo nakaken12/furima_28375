@@ -14,7 +14,7 @@
 | birthday | date | null: false |
 
 ### Association
-- has_many :trade
+- has_many :trades
 - has_many :items
 
 ## items テーブル
