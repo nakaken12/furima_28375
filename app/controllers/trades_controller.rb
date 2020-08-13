@@ -5,15 +5,17 @@ class TradesController < ApplicationController
 
 
   def index
+    # @trade = TradeAddress.new
   end
 
   def create
-    @trade = Trade.new(item_id: trade_params[:item_id], user_id: trade_params[:user_id])
+    @trade = TradeAddress.new(trade_params_2)
     
     # status == 200 以外の時tokenは存在しない
     if trade_params[:token].present?
-      pay_item
-      if @trade.save
+      if @trade.valid?
+        pay_item
+        @trade.save
         redirect_to root_path
       else
         render :index
@@ -28,7 +30,11 @@ class TradesController < ApplicationController
   private
 
   def trade_params
-    params.permit(:token, :item_id).merge(user_id: current_user.id)
+    params.permit(:token)
+  end
+
+  def trade_params_2
+    params.permit(:postal_code, :shipping_origin_id, :city, :street_number, :room_number, :phone_number, :item_id).merge(user_id: current_user.id)
   end
 
   def pay_item
