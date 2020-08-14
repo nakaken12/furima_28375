@@ -3,7 +3,6 @@ class TradesController < ApplicationController
   before_action :move_to_root, only: [:index, :move_to_root, :move_to_top]
   before_action :move_to_top, only: [:index]
 
-
   def index
     @trade = TradeAddress.new
   end
@@ -12,13 +11,12 @@ class TradesController < ApplicationController
     @trade = TradeAddress.new(trade_params_2)
 
     if @trade.valid? && trade_params[:token].present?
-        pay_item
-        @trade.save
-        redirect_to root_path
+      pay_item
+      @trade.save
+      redirect_to root_path
     else
       render :index
     end
-      
   end
 
   private
@@ -32,13 +30,12 @@ class TradesController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
-      
-     amount: @item.price,
-     card: trade_params[:token],
-     currency:'jpy'
-   )
+      amount: @item.price,
+      card: trade_params[:token],
+      currency: 'jpy'
+    )
   end
 
   def set_item
@@ -46,15 +43,10 @@ class TradesController < ApplicationController
   end
 
   def move_to_root
-    if current_user.email == @item.user.email
-      redirect_to root_path
-    end
+    redirect_to root_path if current_user.email == @item.user.email
   end
 
   def move_to_top
-    if @item.trade.present?
-      redirect_to root_path
-    end
+    redirect_to root_path if @item.trade.present?
   end
-
 end

@@ -50,7 +50,7 @@ describe User do
 
       it 'emailが重複していると登録できない' do
         @user.save
-        another_user = FactoryBot.build(:user) 
+        another_user = FactoryBot.build(:user)
         another_user.email = @user.email
         sleep(1)
         another_user.valid?
