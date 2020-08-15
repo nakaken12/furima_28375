@@ -3,8 +3,10 @@ class TradeAddress
   attr_accessor :postal_code, :shipping_origin_id, :city, :street_number, :room_number, :phone_number, :item_id, :user_id
 
   # shipping_addressのバリデーション
+  POSTAL_CODE_REGEX = /\A\d{3}[-]\d{4}\z/
+  
   with_options presence: true do
-    validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: 'Include hyphen(-)' }
+    validates :postal_code, format: { with: POSTAL_CODE_REGEX, message: 'Include hyphen(-)' }
     validates :shipping_origin_id, numericality: { other_than: 1, message: "can't be blank" }
     validates :city
     validates :street_number
