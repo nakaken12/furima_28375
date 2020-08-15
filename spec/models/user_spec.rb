@@ -52,6 +52,7 @@ describe User do
         @user.save
         another_user = FactoryBot.build(:user)
         another_user.email = @user.email
+        sleep(1)
         another_user.valid?
         expect(another_user.errors.full_messages).to include('Email has already been taken')
       end

@@ -46,7 +46,7 @@
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
 | postal_code   | string | null: false |
-| prefecture_id | integer | null: false |
+| shipping_origin_id | integer | null: false |
 | city     | string  | null: false |
 | street_number | string | null: false |
 | room_number   | string |  
@@ -54,8 +54,8 @@
 | item  | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :items
-- belongs_to_active_hash :prefecture
+- belongs_to :item
+- belongs_to_active_hash :shipping_origin
 
 ## trade テーブル
 

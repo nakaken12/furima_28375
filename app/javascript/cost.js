@@ -1,4 +1,4 @@
-window.addEventListener("turbolinks:load", function(){
+window.addEventListener("load", function(){
   document.getElementById("item-price").onchange = func1;
 
   function func1(){

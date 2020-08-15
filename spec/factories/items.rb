@@ -9,5 +9,10 @@ FactoryBot.define do
     days_until_shipping_id  { 2 }
     price                   { 3000 }
     association :user
+
+    # 画像紐付け
+    after(:build) do |item|
+      item.image.attach(io: File.open("#{Rails.root}/public/images/test_image.png"), filename: 'test_image.jpg', content_type: 'image/jpg')
+    end
   end
 end
