@@ -1,6 +1,7 @@
 class TradesController < ApplicationController
   before_action :set_item, only: [:index, :create]
-  before_action :move_to_root, only: [:index, :move_to_root, :move_to_top]
+  before_action :move_to_rogin, only: [:index]
+  before_action :move_to_root, only: [:index]
   before_action :move_to_top, only: [:index]
 
   def index
@@ -42,6 +43,10 @@ class TradesController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 
+  def move_to_rogin
+    redirect_to new_user_session_path unless user_signed_in?
+  end
+
   def move_to_root
     redirect_to root_path if current_user.email == @item.user.email
   end
@@ -49,4 +54,5 @@ class TradesController < ApplicationController
   def move_to_top
     redirect_to root_path if @item.trade.present?
   end
+
 end
