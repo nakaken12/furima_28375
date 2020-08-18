@@ -52,6 +52,7 @@
   flex-wrap: wrap;
   width: 100%;
   padding: 1vh 0;
+  position: relative;
 }
 
 .lists-left {
@@ -102,3 +103,31 @@
   text-decoration: none;
   color: #333333;
 }
+
+.show-lists{
+  list-style: none;
+  width: 270px;
+  position: absolute;
+  left: 0px;
+  top: 30px;
+  background-color: #ffffff;
+  font: 20px;
+
+}
+
+.pull-down-list{
+  height: 35px;
+  padding: 15px 35px 15px 15px;
+  border: 1px solid #eee;
+}
+
+.hidden{
+  display: none;
+}
+
+// .category-list:hover {
+//   color: red;
+//   #show-lists{
+//     display: block;
+//   }
+// }

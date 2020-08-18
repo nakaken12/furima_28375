@@ -9,9 +9,23 @@
       </button>
     <% end %>
   </div>
-  <div class='nav'>
-    <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
+  <div id='nav', class='nav'>
+    <div >
+      <%= link_to 'カテゴリー', "#", class: "category-list" %>
+        <ul id="show-lists", class="show-lists hidden">
+          <li class="pull-down-list">レディース</li>
+          <li class="pull-down-list">メンズ</li>
+          <li class="pull-down-list">ベビー・キッズ</li>
+          <li class="pull-down-list">インテリア・住まい・小物</li>
+          <li class="pull-down-list">本・音楽・ゲーム</li>
+          <li class="pull-down-list">おもちゃ・ホビー・グッズ</li>
+          <li class="pull-down-list">家電・スマホ・カメラ</li>
+          <li class="pull-down-list">スポーツ・レジャー</li>
+          <li class="pull-down-list">ハンドメイド</li>
+          <li class="pull-down-list">その他</li>
+        </ul>
+      </div>
+    <ul class='lists-left'>   
       <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
     </ul>
     <ul class='lists-right'>
