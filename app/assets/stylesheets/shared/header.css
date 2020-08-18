@@ -63,12 +63,12 @@
 
 .category-list {
   text-decoration: none;
-  margin-right: 3vw;
   color: #333333;
 }
 
 .brand-list {
   text-decoration: none;
+  margin-left: 3vw;
   color: #333333;
 }
 
@@ -111,23 +111,20 @@
   left: 0px;
   top: 30px;
   background-color: #ffffff;
-  font: 20px;
-
 }
 
 .pull-down-list{
-  height: 35px;
-  padding: 15px 35px 15px 15px;
+  height: 40px;
+  padding: 7px 35px 5px 15px;
   border: 1px solid #eee;
+  text-decoration: none;
 }
 
 .hidden{
   display: none;
 }
 
-// .category-list:hover {
-//   color: red;
-//   #show-lists{
-//     display: block;
-//   }
-// }
+.category-pull-down-list{
+  color: black;
+}
+

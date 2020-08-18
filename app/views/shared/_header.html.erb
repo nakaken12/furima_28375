@@ -10,22 +10,42 @@
     <% end %>
   </div>
   <div id='nav', class='nav'>
-    <div >
-      <%= link_to 'カテゴリー', "#", class: "category-list" %>
-        <ul id="show-lists", class="show-lists hidden">
-          <li class="pull-down-list">レディース</li>
-          <li class="pull-down-list">メンズ</li>
-          <li class="pull-down-list">ベビー・キッズ</li>
-          <li class="pull-down-list">インテリア・住まい・小物</li>
-          <li class="pull-down-list">本・音楽・ゲーム</li>
-          <li class="pull-down-list">おもちゃ・ホビー・グッズ</li>
-          <li class="pull-down-list">家電・スマホ・カメラ</li>
-          <li class="pull-down-list">スポーツ・レジャー</li>
-          <li class="pull-down-list">ハンドメイド</li>
-          <li class="pull-down-list">その他</li>
-        </ul>
-      </div>
     <ul class='lists-left'>   
+      <div id= "category-lists", class= "category-lists">
+        <li><%= link_to 'カテゴリー', "#", id: "category-list", class: "category-list" %></li>
+          <ul id="show-lists", class="show-lists hidden">
+            <li class="pull-down-list">
+              <%= link_to 'レディース', "#", class: "category-pull-down-list"%>
+            </li>
+            <li class="pull-down-list">
+              <%= link_to 'メンズ', "#", class: "category-pull-down-list"%>
+            </li>
+            <li class="pull-down-list">
+              <%= link_to 'ベビー・キッズ', "#", class: "category-pull-down-list"%>
+            </li>
+            <li class="pull-down-list">
+              <%= link_to 'インテリア・住まい・小物', "#", class: "category-pull-down-list"%>
+            </li>
+            <li class="pull-down-list">
+              <%= link_to '本・音楽・ゲーム', "#", class: "category-pull-down-list"%>
+            </li>
+            <li class="pull-down-list">
+              <%= link_to 'おもちゃ・ホビー・グッズ', "#", class: "category-pull-down-list"%>
+            </li>
+            <li class="pull-down-list">
+              <%= link_to '家電・スマホ・カメラ', "#", class: "category-pull-down-list"%>
+            </li>
+            <li class="pull-down-list">
+              <%= link_to 'スポーツ・レジャー', "#", class: "category-pull-down-list"%>
+            </li>
+            <li class="pull-down-list">
+              <%= link_to 'ハンドメイド', "#", class: "category-pull-down-list"%>
+            </li>
+            <li class="pull-down-list">
+              <%= link_to 'その他', "#", class: "category-pull-down-list"%>
+            </li>
+          </ul>
+      </div>
       <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
     </ul>
     <ul class='lists-right'>
