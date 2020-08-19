@@ -8,4 +8,5 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  get 'category/:id',  to: 'items#lookfor_category'
 end

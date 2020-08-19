@@ -4,7 +4,7 @@
 
 .top-page-header {
   width: 100vw;
-  padding: 2vh 15vw;
+  padding: 2vh 15vw 0vh;
   display: flex;
   flex-direction: column;
 }
@@ -51,14 +51,13 @@
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  padding: 1vh 0;
-  position: relative;
+  padding: 1vh 0 0;
 }
 
 .lists-left {
   display: flex;
   min-width: 200px;
-
+  position: relative;
 }
 
 .category-list {
@@ -73,6 +72,7 @@
 }
 
 .lists-right {
+  padding-bottom: 3vh;
   display: flex;
   list-style: none;
   align-items: flex-end;
@@ -105,11 +105,12 @@
 }
 
 .show-lists{
+  z-index: 50;
   list-style: none;
   width: 270px;
   position: absolute;
   left: 0px;
-  top: 30px;
+  top: 7vh;
   background-color: #ffffff;
 }
 
@@ -128,3 +129,10 @@
   color: black;
 }
 
+.category-lists{
+  padding-bottom: 3vh;
+}
+
+.parent-brand-list{
+  padding-bottom: 3vh;
+}

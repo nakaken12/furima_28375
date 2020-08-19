@@ -6,6 +6,10 @@ class ItemsController < ApplicationController
     @items = Item.includes(:user).order('created_at DESC')
   end
 
+  def lookfor_category
+    @items = Item.where(category_id: params[:id]).includes(:user).order('created_at DESC')
+  end
+
   def new
     @item = Item.new
   end
