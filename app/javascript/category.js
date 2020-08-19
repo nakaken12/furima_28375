@@ -9,7 +9,6 @@ window.addEventListener('load', function(){
   })
 
   pullDownButton.addEventListener('mouseout', function(){
-    // console.log("mouseout")
     category.removeAttribute("style", "color: #3ccace;");
   })
 

@@ -57,7 +57,6 @@
 .lists-left {
   display: flex;
   min-width: 200px;
-  position: relative;
 }
 
 .category-list {
@@ -110,7 +109,7 @@
   width: 270px;
   position: absolute;
   left: 0px;
-  top: 7vh;
+  top: 49px;
   background-color: #ffffff;
 }
 
@@ -131,8 +130,20 @@
 
 .category-lists{
   padding-bottom: 3vh;
+  position: relative;
 }
 
 .parent-brand-list{
   padding-bottom: 3vh;
+  position: relative;
+}
+
+.brand-show-lists{
+  z-index: 50;
+  list-style: none;
+  width: 200px;
+  position: absolute;
+  left: 0px;
+  top: 49px;
+  background-color: #ffffff;
 }

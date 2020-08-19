@@ -13,40 +13,53 @@
     <ul class='lists-left'>   
       <div id= "category-lists", class= "category-lists">
         <li><%= link_to 'カテゴリー', "#", id: "category-list", class: "category-list" %></li>
-          <ul id="show-lists", class="show-lists hidden">
-            <li class="pull-down-list">
-              <%= link_to 'レディース', '/category/2', class: "category-pull-down-list"%>
-            </li>
-            <li class="pull-down-list">
-              <%= link_to 'メンズ', '/category/3', class: "category-pull-down-list"%>
-            </li>
-            <li class="pull-down-list">
-              <%= link_to 'ベビー・キッズ', '/category/4', class: "category-pull-down-list"%>
-            </li>
-            <li class="pull-down-list">
-              <%= link_to 'インテリア・住まい・小物', '/category/5', class: "category-pull-down-list"%>
-            </li>
-            <li class="pull-down-list">
-              <%= link_to '本・音楽・ゲーム', '/category/6', class: "category-pull-down-list"%>
-            </li>
-            <li class="pull-down-list">
-              <%= link_to 'おもちゃ・ホビー・グッズ', '/category/7', class: "category-pull-down-list"%>
-            </li>
-            <li class="pull-down-list">
-              <%= link_to '家電・スマホ・カメラ', '/category/8', class: "category-pull-down-list"%>
-            </li>
-            <li class="pull-down-list">
-              <%= link_to 'スポーツ・レジャー', '/category/9', class: "category-pull-down-list"%>
-            </li>
-            <li class="pull-down-list">
-              <%= link_to 'ハンドメイド', '/category/10', class: "category-pull-down-list"%>
-            </li>
-            <li class="pull-down-list">
-              <%= link_to 'その他', '/category/11', class: "category-pull-down-list"%>
-            </li>
-          </ul>
+        <ul id="show-lists", class="show-lists hidden">
+          <li class="pull-down-list">
+            <%= link_to 'レディース', '/category/2', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'メンズ', '/category/3', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'ベビー・キッズ', '/category/4', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'インテリア・住まい・小物', '/category/5', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to '本・音楽・ゲーム', '/category/6', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'おもちゃ・ホビー・グッズ', '/category/7', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to '家電・スマホ・カメラ', '/category/8', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'スポーツ・レジャー', '/category/9', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'ハンドメイド', '/category/10', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'その他', '/category/11', class: "category-pull-down-list"%>
+          </li>
+        </ul>
       </div>
-      <li class="parent-brand-list"><%= link_to 'ブランド', "#", class: "brand-list" %></li>
+      <div id="parent-brand-list", class="parent-brand-list">
+        <li><%= link_to 'ブランド', "#", id: "brand-list", class: "brand-list" %></li>
+        <ul id= "brand-show-lists", class= "brand-show-lists hidden">
+          <li class="pull-down-list">
+            <%= link_to 'NIKE', "#", class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'adidas', "#", class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'Puma', "#", class: "category-pull-down-list"%>
+          </li>
+        </ul>
+      </div>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>
