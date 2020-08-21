@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     end
   end
   get 'category/:id',  to: 'items#lookfor_category'
+  get 'brand/:value',  to: 'item_brands#lookfor_brand'
 end
