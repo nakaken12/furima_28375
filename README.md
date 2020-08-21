@@ -30,9 +30,11 @@
 | days_until_shipping_id | integer | null: false |
 | price      | integer | null: false |
 | user  | references | null: false, foreign_key: true |
+| brand | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
+- belongs_to :brand
 - has_one :trade
 - has_one :shipping_address
 - belongs_to_active_hash :category
@@ -68,3 +70,11 @@
 - belongs_to :user
 - belongs_to :item
 
+## brandテーブル
+
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| b_name | string | null: false |
+
+### Association
+- has_many :items

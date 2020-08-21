@@ -4,10 +4,13 @@ RSpec.describe TradeAddress, type: :model do
   describe '商品購入' do
     before do
       # item生成時に紐付けられたuerが出品者
-      @item = FactoryBot.create(:item)
+      @user = FactoryBot.create(:user)
+      @item_brand = FactoryBot.build(:item_brand, user_id: @user.id, image: fixture_file_upload('/test_image.png'))
+      @item_brand.save
+      @item_id = Item.where(name: @item_brand.name).first.id
 
       # @trade_address生成時のuserが購入者
-      @trade_address = FactoryBot.build(:trade_address, item_id: @item.id)
+      @trade_address = FactoryBot.build(:trade_address, item_id: @item_id)
     end
 
     it '全てのフォームが正しく入力されていれば保存できる' do
