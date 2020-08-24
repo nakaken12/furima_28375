@@ -21,7 +21,6 @@ class ItemBrand
   validates :b_name, presence: true
 
   def save
-    # brand = Brand.create(b_name: b_name)
     brand = Brand.where(b_name: b_name).first_or_initialize
     brand.save
     Item.create(name: name, explanation: explanation, category_id: category_id, status_id: status_id, shipping_charge_id: shipping_charge_id, shipping_origin_id: shipping_origin_id, days_until_shipping_id: days_until_shipping_id, price: price, user_id: user_id, brand_id: brand.id, image: image)

@@ -47,7 +47,7 @@
         </ul>
       </div>
       <div id="parent-brand-list", class="parent-brand-list">
-        <li><%= link_to 'ブランド', "#", id: "brand-list", class: "brand-list" %></li>
+        <li><%= link_to 'ブランド', show_brand_list_path, id: "brand-list", class: "brand-list" %></li>
         <ul id= "brand-show-lists", class= "brand-show-lists hidden">
           <li class="pull-down-list">
             <%= link_to 'ナイキ', '/brand/ナイキ', class: "category-pull-down-list"%>
@@ -68,7 +68,7 @@
             <%= link_to 'エルメス', '/brand/エルメス', class: "category-pull-down-list"%>
           </li>         
           <li class="pull-down-list">
-            <%= link_to 'ブランド一覧', "#", class: "category-pull-down-list"%>
+            <%= link_to 'ブランド一覧', show_brand_list_path, class: "category-pull-down-list"%>
           </li>
         </ul>
       </div>
