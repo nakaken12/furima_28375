@@ -53,6 +53,7 @@ a {
 }
 
 .select-reason-contents>.title {
+  z-index: 10;
   text-align: center;
   font-size: 3.5vh;
   font-weight: bold;
@@ -216,6 +217,8 @@ a {
 /* 商品一覧 */
 
 .item-contents {
+  z-index: 10;
+  position: relative;
   background-color: #FFF;
   display: flex;
   flex-direction: column;

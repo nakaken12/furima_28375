@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_13_021917) do
+ActiveRecord::Schema.define(version: 2020_08_20_034546) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,6 +33,12 @@ ActiveRecord::Schema.define(version: 2020_08_13_021917) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "b_name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "explanation", null: false
@@ -45,7 +51,9 @@ ActiveRecord::Schema.define(version: 2020_08_13_021917) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_items_on_user_id"
+    t.bigint "brand_id"
+    t.index ["brand_id"], name: "fk_rails_36708b3aa6"
+    t.index ["user_id"], name: "fk_rails_d4b6334db2"
   end
 
   create_table "shipping_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -89,6 +97,7 @@ ActiveRecord::Schema.define(version: 2020_08_13_021917) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "items", "brands"
   add_foreign_key "items", "users"
   add_foreign_key "shipping_addresses", "items"
   add_foreign_key "trades", "items"

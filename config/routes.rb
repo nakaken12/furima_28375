@@ -4,5 +4,11 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :items do
     resources :trades, only: [:index, :create]
+    collection do
+      get 'search'
+    end
   end
+  get 'category/:id',  to: 'items#lookfor_category'
+  get 'brand/:value',  to: 'item_brands#lookfor_brand'
+  get 'show/brand/list', to: 'items#show_brand_list'
 end

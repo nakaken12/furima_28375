@@ -2,17 +2,76 @@
 <header class='top-page-header'>
   <div class='search-bar-contents'>
     <%= link_to image_tag("furima-logo-color.png", class:"furima-icon"), "/" %>
-    <form class="search-form" action="#">
-      <input class='input-box' placeholder='キーワードから探す'>
+    <%= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |f| %>
+      <%= f.text_field :keyword, class:'input-box', placeholder: 'キーワードから探す' %>
       <button class="search-button">
         <%= image_tag "search.png", class:"search-icon" %>
       </button>
-    </form>
+    <% end %>
   </div>
-  <div class='nav'>
-    <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
-      <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
+  <div id='nav', class='nav'>
+    <ul class='lists-left'>   
+      <div id= "category-lists", class= "category-lists">
+        <li><%= link_to 'カテゴリー', "#", id: "category-list", class: "category-list" %></li>
+        <ul id="show-lists", class="show-lists hidden">
+          <li class="pull-down-list">
+            <%= link_to 'レディース', '/category/2', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'メンズ', '/category/3', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'ベビー・キッズ', '/category/4', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'インテリア・住まい・小物', '/category/5', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to '本・音楽・ゲーム', '/category/6', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'おもちゃ・ホビー・グッズ', '/category/7', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to '家電・スマホ・カメラ', '/category/8', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'スポーツ・レジャー', '/category/9', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'ハンドメイド', '/category/10', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'その他', '/category/11', class: "category-pull-down-list"%>
+          </li>
+        </ul>
+      </div>
+      <div id="parent-brand-list", class="parent-brand-list">
+        <li><%= link_to 'ブランド', show_brand_list_path, id: "brand-list", class: "brand-list" %></li>
+        <ul id= "brand-show-lists", class= "brand-show-lists hidden">
+          <li class="pull-down-list">
+            <%= link_to 'ナイキ', '/brand/ナイキ', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'シャネル', '/brand/シャネル', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'アディダス', '/brand/アディダス', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'ユニクロ', '/brand/ユニクロ', class: "category-pull-down-list"%>
+          </li>
+          <li class="pull-down-list">
+            <%= link_to 'シュプリーム', '/brand/シュプリーム', class: "category-pull-down-list"%>
+          </li>
+           <li class="pull-down-list">
+            <%= link_to 'エルメス', '/brand/エルメス', class: "category-pull-down-list"%>
+          </li>         
+          <li class="pull-down-list">
+            <%= link_to 'ブランド一覧', show_brand_list_path, class: "category-pull-down-list"%>
+          </li>
+        </ul>
+      </div>
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>

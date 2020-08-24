@@ -6,13 +6,21 @@ class ItemsController < ApplicationController
     @items = Item.includes(:user).order('created_at DESC')
   end
 
+  def lookfor_category
+    @items = Item.where(category_id: params[:id]).includes(:user).order('created_at DESC')
+  end
+
+  def show_brand_list
+  end
+
   def new
-    @item = Item.new
+    @item = ItemBrand.new
   end
 
   def create
-    @item = Item.new(item_params)
-    if @item.save
+    @item = ItemBrand.new(item_brand_params)
+    if @item.valid?
+      @item.save
       redirect_to root_path
     else
       render :new
@@ -26,6 +34,14 @@ class ItemsController < ApplicationController
   end
 
   def update
+    if params[:item][:b_name] != ""
+      @brand = Brand.find_by(b_name: params[:item][:b_name])
+      if @brand == nil
+        @brand = Brand.create(b_name: params[:item][:b_name])
+      end
+      @item.brand_id = @brand.id
+      @item.save
+    end
     if @item.update(item_params)
       redirect_to item_path
     else
@@ -42,7 +58,15 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.search(params[:keyword]).order('created_at DESC')
+  end
+
   private
+
+  def item_brand_params
+    params.require(:item_brand).permit(:name, :explanation, :category_id, :status_id, :shipping_charge_id, :shipping_origin_id, :days_until_shipping_id, :price, :image, :brand_id, :b_name).merge(user_id: current_user.id)
+  end
 
   def item_params
     params.require(:item).permit(:name, :explanation, :category_id, :status_id, :shipping_charge_id, :shipping_origin_id, :days_until_shipping_id, :price, :image).merge(user_id: current_user.id)
