@@ -15,7 +15,7 @@
 
 ### Association
 - has_many :trades
-- has_many :items
+- has_many :items                       
 
 ## items テーブル
 
